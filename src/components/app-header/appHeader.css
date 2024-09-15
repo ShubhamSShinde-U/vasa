@@ -1,0 +1,163 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.company-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 20px;
+  color: #333;
+}
+
+/* Hamburger button styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+/* Add animation to the hamburger bars when open */
+.bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+.bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-item {
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+}
+
+.app-header-btn {
+  padding: 10px 12px;
+  font-size: 16px;
+  background-color: #ffd700;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    justify-content: space-between;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    flex-direction: column;
+    background-color: white;
+    gap: 10px;
+    width: 100%;
+    display: none;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .menu-item {
+    font-size: 14px;
+    padding: 10px 0;
+    width: 100%;
+    text-align: left;
+    margin-left: 10px;
+  }
+
+  .app-header-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* Show the hamburger button on smaller screens */
+  .hamburger {
+    display: flex;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-name {
+    font-size: 18px;
+  }
+
+  .menu-item {
+    font-size: 14px;
+  }
+
+  .app-header-btn {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
+
+
+
+/* @media (max-width: 480px) {
+  .company-name {
+    font-size: 18px;
+  }
+
+  .menu-item {
+    font-size: 14px;
+  }
+
+  .app-header-btn {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+} */

@@ -1,0 +1,33 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  background-color: rgba(173, 173, 173, 0.514);
+  font-family: "Poppins", sans-serif;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+}
+.modal-child {
+  position: fixed;
+
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* right: auto;
+    bottom: auto; */
+  top: 50%;
+  background-color: white;
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.modal-close {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+.modal-close img {
+  width: 20px;
+  cursor: pointer;
+}

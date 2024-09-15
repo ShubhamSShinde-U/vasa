@@ -1,0 +1,30 @@
+/* Styling for the Accordion */
+.accordion {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 15px 10px;
+}
+
+.accordion-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.accordion-icon {
+  font-size: 24px;
+  color: #4B0082; /* Purple color */
+}
+
+.accordion-content {
+  padding: 10px 10px;
+  font-size: 16px;
+  color: #555;
+}
