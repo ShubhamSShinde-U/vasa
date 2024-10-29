@@ -67,13 +67,12 @@ button:focus-visible {
   }
 } */
 
-body{
+body {
   margin: 0;
 }
 
-
 .cta-button {
-  background-color: #FFD700;
+  background-color: #ffd700;
   color: black;
   padding: 15px 30px;
   font-size: 1.2rem;
@@ -83,11 +82,15 @@ body{
 }
 
 .cta-button:hover {
-  background-color: #FFC300;
+  background-color: #ffc300;
 }
 
+.img-filter {
+  /* filter: brightness(0) saturate(100%) invert(14%) sepia(73%) saturate(4413%) hue-rotate(266deg) brightness(66%) contrast(122%); */
+  filter: brightness(0) saturate(100%) invert(52%) sepia(93%) saturate(420%) hue-rotate(71deg) brightness(102%) contrast(96%);
+}
 
-
-.img-filter{
-  filter: brightness(0) saturate(100%) invert(14%) sepia(73%) saturate(4413%) hue-rotate(266deg) brightness(66%) contrast(122%);
+.header-title {
+}
+.header-sub-title {
 }

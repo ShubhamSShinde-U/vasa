@@ -1,14 +1,14 @@
 .homepage {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .hero-banner {
-  background: linear-gradient(to right, #32CD32, #343434);
+  background: linear-gradient(to right, #32cd32, #343434);
   display: flex;
   justify-content: space-between;
   padding: 50px;
   color: white;
-  margin-bottom: 64px;
+  /* margin-bottom: 64px; */
 }
 
 .hero-content {
@@ -35,20 +35,19 @@
   padding: 50px 20px;
 }
 
-.why-choose-us h2{
-    font-size: 2rem;
+.why-choose-us h2 {
+  font-size: 2rem;
 }
 
 .features {
   display: flex;
   justify-content: space-around;
   align-items: center;
-
 }
-.feature-gap{
-    display: flex;
-    height: 80px;
-    border: 1px solid rgb(225, 224, 224);
+.feature-gap {
+  display: flex;
+  height: 80px;
+  border: 1px solid rgb(225, 224, 224);
 }
 .feature {
   text-align: center;
@@ -77,19 +76,17 @@
   padding: 20px;
 }
 
-
-
-.service-section-title{
+.service-section-title {
   text-align: center;
   margin-bottom: 22px;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
+  margin: 36px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-@media (max-width: 480px){
-  .hero-content{
+@media (max-width: 480px) {
+  .hero-content {
     width: 100%;
     max-width: 100%;
   }

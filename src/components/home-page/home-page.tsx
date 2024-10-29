@@ -2,9 +2,10 @@ import { useState } from "react";
 import Services from "../all-services/services";
 import "./home-page.css"; // Create a CSS file for the styles
 import Contact from "../contact/contact";
+import Clients from "./clients/clients";
 
 const HomePage = () => {
-  const [isModalOpen,setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="homepage">
       {/* Header Section */}
@@ -14,13 +15,22 @@ const HomePage = () => {
           <p>
             Excellence in engineering and design tailored to your unique vision.
           </p>
-          <button onClick={()=>{setIsModalOpen(true)}} className="cta-button">Request a Custom Design</button>
+          <button
+            onClick={() => {
+              setIsModalOpen(true);
+            }}
+            className="cta-button"
+          >
+            Request a Custom Design
+          </button>
         </div>
         <div className="hero-image">
           <img src="assets/demo.jpeg" alt="Custom Scooter" />
         </div>
       </header>
-      <div className="service-section-title"> Our Services</div>
+      {/* clients  */}
+      <Clients />
+      {/* services  */}
       <Services />
       {/* Why Choose Us Section */}
       <section className="why-choose-us">
@@ -52,7 +62,14 @@ const HomePage = () => {
       <section className="cta-section">
         <h2>Have a Vision? Let's Make It Happen!</h2>
         <p>Book a consultation with our design team today.</p>
-        <button onClick={()=>{setIsModalOpen(true)}} className="cta-button">Start Your Design Journey</button>
+        <button
+          onClick={() => {
+            setIsModalOpen(true);
+          }}
+          className="cta-button"
+        >
+          Start Your Design Journey
+        </button>
       </section>
       {/* Footer Section */}
       <footer className="footer">
@@ -68,9 +85,13 @@ const HomePage = () => {
         <p>Contact: email@example.com | +123 456 7890</p>
       </footer>
 
-      {
-        isModalOpen && <Contact onClose={()=>{setIsModalOpen(false)}}/>
-      }
+      {isModalOpen && (
+        <Contact
+          onClose={() => {
+            setIsModalOpen(false);
+          }}
+        />
+      )}
     </div>
   );
 };

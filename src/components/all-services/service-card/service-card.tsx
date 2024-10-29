@@ -4,7 +4,7 @@ import './service-card.css'
 function ServiceCard({data}:any) {
   return (
     <div className="services-card">
-      <div className='services-card-img'>
+      <div className='services-card-icon-container'>
         <img className="img-filter"src={data.icon} alt=""  />
       </div>
       <div className="services-info">
