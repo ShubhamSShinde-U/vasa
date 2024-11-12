@@ -11,7 +11,10 @@ const HomePage = () => {
       {/* Header Section */}
       <header className="hero-banner">
         <div className="hero-content">
-          <h1>Revolutionize Your Ride with Custom Scooter Designs</h1>
+          <h1>
+            Enhance Your Riding Experience with  <br></br>
+            <span>Custom Scooter Designs</span>
+          </h1>
           <p>
             Excellence in engineering and design tailored to your unique vision.
           </p>
@@ -21,11 +24,11 @@ const HomePage = () => {
             }}
             className="cta-button"
           >
-            Request a Custom Design
+            Request Design Demo
           </button>
         </div>
         <div className="hero-image">
-          <img src="assets/demo.jpeg" alt="Custom Scooter" />
+          <img src="assets/lets.png" alt="Custom Scooter" />
         </div>
       </header>
       {/* clients  */}
