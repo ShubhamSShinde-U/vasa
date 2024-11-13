@@ -9,28 +9,7 @@ const HomePage = () => {
   return (
     <div className="homepage">
       {/* Header Section */}
-      <header className="hero-banner">
-        <div className="hero-content">
-          <h1>
-            Enhance Your Riding Experience with  <br></br>
-            <span>Custom Scooter Designs</span>
-          </h1>
-          <p>
-            Excellence in engineering and design tailored to your unique vision.
-          </p>
-          <button
-            onClick={() => {
-              setIsModalOpen(true);
-            }}
-            className="cta-button"
-          >
-            Request Design Demo
-          </button>
-        </div>
-        <div className="hero-image">
-          <img src="assets/lets.png" alt="Custom Scooter" />
-        </div>
-      </header>
+      
       {/* clients  */}
       <Clients />
       {/* services  */}

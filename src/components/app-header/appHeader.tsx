@@ -35,7 +35,7 @@ const AppHeader = () => {
           onClick={() => {
             setIsModalOpen(true);
           }}
-          className="cta-button"
+          className="primary-button"
         >
           Request Design Demo
         </button>
