@@ -1,0 +1,23 @@
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-100);
+  color: var(--white);
+  padding: 32px 0;
+  gap: 16px;
+  .footer-above {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: center;
+    cursor: pointer;
+
+    // border-bottom: 1px solid var(--white);
+    padding-bottom: 12px;
+    font-weight: 550;
+  }
+  .footer-below {
+    text-align: center;
+    font-weight: 600;
+  }
+}
