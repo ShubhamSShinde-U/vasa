@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import './service-card.css'
+import './service-card.scss'
 
 function ServiceCard({data}:any) {
   return (

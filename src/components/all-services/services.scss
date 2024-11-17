@@ -1,0 +1,41 @@
+.services-wrapper {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+  
+  .services-all-title {
+    width: 100%;
+    text-align: center;
+  }
+  .services-all-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 80%;
+    box-shadow: 0 20px 51.4px var(--box-shadow);
+    border-radius: 16px;
+  }
+  .services-all-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 16px;
+    width: 100%;
+    padding: 16px;
+  }
+  .services-all-cards hr {
+    width: 100%;
+    opacity: 0.65;
+  }
+
+  .services-all-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 12px 0;
+  }
+
+  /* flex-direction: column */
+}

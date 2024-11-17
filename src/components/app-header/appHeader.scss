@@ -84,6 +84,7 @@
     align-items: center;
     padding: 15px;
     justify-content: space-between;
+    // width: 100%;
   }
 
   .nav-menu {
@@ -93,8 +94,10 @@
     flex-direction: column;
     background-color: white;
     gap: 10px;
-    width: 100%;
+    max-width: 100%;
     display: none;
+    // padding: 25px;
+    width: 100%;
 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -108,7 +111,8 @@
     padding: 10px 0;
     width: 100%;
     text-align: left;
-    margin-left: 10px;
+    margin-left: 32px;
+    
   }
 
   .app-header-btn {
@@ -131,21 +135,23 @@
 }
 
 @media (max-width: 480px) {
+  .nav-menu {
+    // padding: 0px;
+  }
   .company-name {
     font-size: 18px;
   }
 
   .menu-item {
     font-size: 14px;
+    margin-left: 32px;
   }
 
   .app-header-btn {
     font-size: 14px;
-    padding: 8px 10px;
+    // padding: 8px 10px;
   }
 }
-
-
 
 /* @media (max-width: 480px) {
   .company-name {

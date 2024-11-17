@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./appHeader.css";
+import "./appHeader.scss";
 import Contact from "../contact/contact";
 
 const AppHeader = () => {
