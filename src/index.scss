@@ -92,7 +92,6 @@ body {
   background: transparent;
 }
 
-
 .img-filter {
   /* filter: brightness(0) saturate(100%) invert(14%) sepia(73%) saturate(4413%) hue-rotate(266deg) brightness(66%) contrast(122%); */
   filter: brightness(0) saturate(100%) invert(52%) sepia(93%) saturate(420%)
@@ -104,6 +103,11 @@ body {
   &:hover {
     background-color: var(--primary-hover-100);
   }
+  &.disabled {
+    opacity: 0.65;
+    cursor: default;
+    background-color: var(--primary-100);
+  }
 }
 .primary-span {
   @include primary-span();
@@ -113,4 +117,10 @@ body {
 }
 .primary-sub-title {
   @include primary-sub-title();
+}
+.secondary-button {
+  @include primary-button();
+  &:hover {
+    background-color: var(--primary-hover-100);
+  }
 }

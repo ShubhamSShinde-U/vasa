@@ -1,5 +1,10 @@
+import { useState } from "react";
 import "./hero-section.scss";
+import ContactForm from "../contact-form/contact-form";
+import SuccessMessage from "../contact-form/success-message/success-message";
 function HeroSection() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [showSuccessMsg, setShowSuccessMsg] = useState(false);
   return (
     <div className="hero-banner">
       <div className="hero-content">
@@ -12,7 +17,7 @@ function HeroSection() {
         </div>
         <button
           onClick={() => {
-            // setIsModalOpen(true);
+            setIsContactModalOpen(true);
           }}
           className="primary-button"
         >
@@ -22,6 +27,24 @@ function HeroSection() {
       <div className="hero-image">
         <img src="assets/lets.png" alt="Custom Scooter" />
       </div>
+      {isContactModalOpen && (
+        <ContactForm
+          onClose={() => {
+            setIsContactModalOpen(false);
+          }}
+          onSuccess={() => {
+            setIsContactModalOpen(false)
+            setShowSuccessMsg(true)
+          }}
+        />
+      )}
+      {showSuccessMsg && (
+        <SuccessMessage
+          onClose={() => {
+            setShowSuccessMsg(false);
+          }}
+        />
+      )}
     </div>
   );
 }

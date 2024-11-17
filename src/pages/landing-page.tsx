@@ -1,4 +1,5 @@
 import Services from '../components/all-services/services';
+import SuccessMessage from '../components/contact-form/success-message/success-message';
 import HeroSection from '../components/hero-section/hero-section';
 import Clients from '../components/home-page/clients/clients';
 import './landing-page.scss';
@@ -6,10 +7,10 @@ import './landing-page.scss';
 function LandingPage() {
   return (
     <div className='landing-page-wrapper'>
+      
       <HeroSection />
       <Services />
       <Clients />
-      
     </div>
   );
 }

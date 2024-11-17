@@ -5,6 +5,7 @@ import Contact from "../contact/contact";
 const AppHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);

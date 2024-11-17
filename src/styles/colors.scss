@@ -1,11 +1,15 @@
 :root {
   --primary-100: #147f14;
-  --primary-hover-100:#1EAC1E;
+  --primary-hover-100: #1eac1e;
   --white: #fff;
   --span: #15ca15;
-  --secondary-hover:rgb(246, 243, 243);
-  --box-shadow:#3e008438;
-  --grey-100:#595959;
+  --secondary-hover: rgb(246, 243, 243);
+  --box-shadow: #3e008438;
+  --grey-100: #595959;
   --grey-80: #464646;
 
-  --green :green;}
+  --green: green;
+
+  --filter-100: brightness(0) saturate(100%) invert(46%) sepia(78%)
+    saturate(656%) hue-rotate(75deg) brightness(95%) contrast(95%);
+}
