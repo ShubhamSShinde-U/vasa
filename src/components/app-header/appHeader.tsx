@@ -1,21 +1,29 @@
 import { useState } from "react";
 import "./appHeader.scss";
 import Contact from "../contact/contact";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const AppHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
+  const location = useLocation();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // Define navigation items with paths
+  const navItems = [
+    { name: "Home", path: "/home",value:"/home" },
+    { name: "Services", path: "/services" ,value:"/services"},
+    { name: "About", path: "/about",value:'/about' },
+  ];
+  const navigate = useNavigate()
+
   return (
     <header className="app-header">
       <div className="header-left">
         <div className="logo-container">
-          {/* <img src="/path-to-your-logo.png" alt="VASA logo" className="logo" > */}
           <span className="company-name">VASA</span>
         </div>
 
@@ -29,9 +37,17 @@ const AppHeader = () => {
 
       {/* Conditional rendering for the menu */}
       <nav className={menuOpen ? "nav-menu open" : "nav-menu"}>
-        <div className="menu-item ">Home</div>
-        <div className="menu-item ">Services</div>
-        <div className="menu-item">About</div>
+        {navItems.map((item) => (
+          <div
+            key={item.path}
+            onClick={()=>{navigate(item.path)}}
+            className={`menu-item ${
+              location.pathname === item.value ? "current-active-tab" : ""
+            }`}
+          >
+            {item.name}
+          </div>
+        ))}
         <button
           onClick={() => {
             setIsModalOpen(true);

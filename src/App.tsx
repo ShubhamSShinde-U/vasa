@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/layout/layout";
 import HomePage from "./components/home-page/home-page";
 import LandingPage from "./pages/landing-page";
+import About from "./pages/about/about";
 
 // Define your routes array
 const routes = [
@@ -10,10 +11,10 @@ const routes = [
     path: "/",
     element: <Layout />,
     children: [
-      { path: "", element: <LandingPage /> },
+      { path: "home", element: <LandingPage /> },
       {
         path: "about",
-        // element: <Products />,
+        element: <About />,
       },
 
       {

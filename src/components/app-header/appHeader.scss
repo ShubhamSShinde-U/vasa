@@ -76,6 +76,9 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.current-active-tab{
+  border-bottom: 2px solid var(--grey-100);
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {

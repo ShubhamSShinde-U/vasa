@@ -1,0 +1,44 @@
+.about-wrapper {
+  padding: 32px 42px;
+  .about-hero {
+    display: flex;
+    // align-items: center;
+    width: 100%;
+    // justify-content: space-between;
+    gap:70px;
+    .about-hero-title {
+      width: 50%;
+      // margin-top: 32px;
+      // text-align: center;
+      width: 60%;
+      display: flex;
+      // align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .primary-button {
+        margin-top: 30px;
+        width: fit-content;
+      }
+    }
+    .about-img-container {
+      width: 40%;
+      display: flex;align-items: center;justify-content: center;
+      img {
+        width: 90%;
+
+        // width: 400px;
+      }
+    }
+  }
+
+  // .about-services-icons{
+  //   display: flex;
+  //   padding-top: 32px;
+  //   gap:16px;
+  //   border-top: 1px solid var(--grey-100);
+  //   img{
+  //       filter: var(--filter-100);
+  //   }
+  // }
+}
