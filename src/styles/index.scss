@@ -4,7 +4,7 @@
 @mixin primary-title() {
   font-size: 3rem;
   font-weight: 900;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
   width: 100%;
   font-size: 48px;
   font-style: normal;
@@ -27,7 +27,7 @@
 
 @mixin primary-sub-title() {
   font-size: 1.2rem;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
   font-weight: 600;
   width: 70%;
   color: var(--grey-80);

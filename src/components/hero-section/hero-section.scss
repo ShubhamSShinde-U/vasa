@@ -3,15 +3,16 @@
   justify-content: space-between;
   padding: 50px;
   height: 100%;
+  // align-items: center;
 
   .hero-content {
     width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      width: 70%;
-      color: rgb(70, 70, 70);
+    .primary-button {
+      width: fit-content;
     }
   }
 
@@ -36,14 +37,16 @@
       margin: 50px 0 38px 0;
       // text-align: center;
       // max-width: 100%;
-      .primary-title{
+      .primary-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      .primary-span {
         font-size: 2rem;
       }
-      .primary-span{
-        font-size: 2rem;
-      }
-      .primary-sub-title{
+      .primary-sub-title {
         width: 80%;
+        margin-bottom: 30px;
       }
     }
     .hero-image {

@@ -1,3 +1,5 @@
+import Clients from "../../components/home-page/clients/clients";
+import WhyUs from "../../components/why-us/why-us";
 import "./about.scss";
 function About() {
   return (
@@ -23,12 +25,21 @@ function About() {
           <img src="images/about-hero.png" alt="" />
         </div>
       </div>
-
-      {/* <div className="about-services-icons">
-        <img src="assets/benchmark.svg" alt="" width={60} />
-        <img src="assets/battery-li-ion.svg" alt="" width={60} />
-        <img src="assets/settings-icon.svg" alt="" width={60} />
-      </div> */}
+      <div className="about-vision">
+        <div className="vision-icon-text">
+          <img src="assets/vision.svg" width={90} alt="" />
+          <div className="primary-title">
+            Our <span className="primary-span">Vision</span>
+          </div>
+        </div>
+        <div className="vision-desc primary-sub-title">
+          To be a one-stop solution provider for all the global ‘Design &
+          Engineering’ needs and to promote innovations with collaborative
+          engagements and maintaining highest quality standards.
+        </div>
+      </div>
+      <WhyUs />
+      <Clients />
     </div>
   );
 }

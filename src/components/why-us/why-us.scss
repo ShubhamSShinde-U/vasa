@@ -1,0 +1,20 @@
+.why-us-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap:50px;
+  padding: 42px;
+  margin-top: 24px;
+    .why-choose-us-title{
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+    }
+  .all-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    align-items: center;
+
+    justify-content: center;
+  }
+}

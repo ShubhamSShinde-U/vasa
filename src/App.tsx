@@ -1,7 +1,7 @@
 // src/App.js
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import Layout from "./components/layout/layout";
-import HomePage from "./components/home-page/home-page";
+// import HomePage from "./components/home-page/home-page";
 import LandingPage from "./pages/landing-page";
 import About from "./pages/about/about";
 
@@ -19,7 +19,7 @@ const routes = [
 
       {
         path: "*",
-        element: <HomePage />,
+        element: <Navigate to={'home'}/>,
       },
     ],
   },

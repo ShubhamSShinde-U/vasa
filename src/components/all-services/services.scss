@@ -3,7 +3,14 @@
   display: flex;
   justify-content: center;
   margin-top: 48px;
-  
+  .service-section-title {
+  text-align: center;
+  margin-bottom: 22px;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 36px;
+  font-family: Arial, Helvetica, sans-serif;
+}
   .services-all-title {
     width: 100%;
     text-align: center;
