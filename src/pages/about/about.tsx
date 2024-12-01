@@ -1,7 +1,10 @@
+import { useState } from "react";
 import Clients from "../../components/home-page/clients/clients";
 import WhyUs from "../../components/why-us/why-us";
 import "./about.scss";
+import ContactForm from "../../components/contact-form/contact-form";
 function About() {
+  const [isContactModalOpen,setIsContactModalOpen] = useState(false)
   return (
     <div className="about-wrapper">
       <div className="about-hero">
@@ -14,7 +17,7 @@ function About() {
           </div>
           <button
             onClick={() => {
-              // setIsContactModalOpen(true);
+              setIsContactModalOpen(true);
             }}
             className="primary-button"
           >
@@ -40,6 +43,9 @@ function About() {
       </div>
       <WhyUs />
       <Clients />
+      {
+        isContactModalOpen && <ContactForm onClose={()=>{setIsContactModalOpen(false)}}/>
+      }
     </div>
   );
 }

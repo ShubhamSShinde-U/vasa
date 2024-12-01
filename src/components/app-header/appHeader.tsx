@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./appHeader.scss";
-import Contact from "../contact/contact";
+// import Contact from "../contact/contact";
 import { useLocation, useNavigate } from "react-router-dom";
+import ContactForm from "../contact-form/contact-form";
 
 const AppHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,7 +41,7 @@ const AppHeader = () => {
         {navItems.map((item) => (
           <div
             key={item.path}
-            onClick={()=>{navigate(item.path)}}
+            onClick={()=>{toggleMenu();navigate(item.path)}}
             className={`menu-item ${
               location.pathname === item.value ? "current-active-tab" : ""
             }`}
@@ -59,7 +60,7 @@ const AppHeader = () => {
       </nav>
 
       {isModalOpen && (
-        <Contact
+        <ContactForm
           onClose={() => {
             setIsModalOpen(false);
           }}
