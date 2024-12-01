@@ -3,11 +3,13 @@ import "./appHeader.scss";
 // import Contact from "../contact/contact";
 import { useLocation, useNavigate } from "react-router-dom";
 import ContactForm from "../contact-form/contact-form";
+import SuccessMessage from "../contact-form/success-message/success-message";
 
 const AppHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
+  const [showSuccessMsg, setShowSuccessMsg] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -15,11 +17,11 @@ const AppHeader = () => {
 
   // Define navigation items with paths
   const navItems = [
-    { name: "Home", path: "/home",value:"/home" },
-    { name: "Services", path: "/services" ,value:"/services"},
-    { name: "About", path: "/about",value:'/about' },
+    { name: "Home", path: "/home", value: "/home" },
+    { name: "Services", path: "/services", value: "/services" },
+    { name: "About", path: "/about", value: "/about" },
   ];
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <header className="app-header">
@@ -41,7 +43,10 @@ const AppHeader = () => {
         {navItems.map((item) => (
           <div
             key={item.path}
-            onClick={()=>{toggleMenu();navigate(item.path)}}
+            onClick={() => {
+              toggleMenu();
+              navigate(item.path);
+            }}
             className={`menu-item ${
               location.pathname === item.value ? "current-active-tab" : ""
             }`}
@@ -63,6 +68,17 @@ const AppHeader = () => {
         <ContactForm
           onClose={() => {
             setIsModalOpen(false);
+          }}
+          onSuccess={() => {
+            setIsModalOpen(false);
+            setShowSuccessMsg(true);
+          }}
+        />
+      )}
+      {showSuccessMsg && (
+        <SuccessMessage
+          onClose={() => {
+            setShowSuccessMsg(false);
           }}
         />
       )}

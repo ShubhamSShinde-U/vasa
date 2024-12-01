@@ -3,8 +3,10 @@ import Clients from "../../components/home-page/clients/clients";
 import WhyUs from "../../components/why-us/why-us";
 import "./about.scss";
 import ContactForm from "../../components/contact-form/contact-form";
+import SuccessMessage from "../../components/contact-form/success-message/success-message";
 function About() {
-  const [isContactModalOpen,setIsContactModalOpen] = useState(false)
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [showSuccessMsg, setShowSuccessMsg] = useState(false);
   return (
     <div className="about-wrapper">
       <div className="about-hero">
@@ -43,9 +45,24 @@ function About() {
       </div>
       <WhyUs />
       <Clients />
-      {
-        isContactModalOpen && <ContactForm onClose={()=>{setIsContactModalOpen(false)}}/>
-      }
+      {isContactModalOpen && (
+        <ContactForm
+          onClose={() => {
+            setIsContactModalOpen(false);
+          }}
+          onSuccess={() => {
+            setIsContactModalOpen(false);
+            setShowSuccessMsg(true);
+          }}
+        />
+      )}
+      {showSuccessMsg && (
+        <SuccessMessage
+          onClose={() => {
+            setShowSuccessMsg(false);
+          }}
+        />
+      )}
     </div>
   );
 }

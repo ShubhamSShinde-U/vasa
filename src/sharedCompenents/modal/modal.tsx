@@ -2,8 +2,18 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { createPortal } from "react-dom";
 import "./modal.css";
+import { useEffect } from "react";
 function Modal({ onClose, children }: any) {
+  useEffect(()=>{
+    document.body.style.overflow = 'hidden'
+    return ()=>{
+          document.body.style.overflow = "auto";
+
+    }
+  })
   return createPortal(
+    
+
     <>
       <div
         className="modal-container"
