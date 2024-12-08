@@ -3,14 +3,18 @@ import "./appHeader.scss";
 // import Contact from "../contact/contact";
 import { useLocation, useNavigate } from "react-router-dom";
 import ContactForm from "../contact-form/contact-form";
-import SuccessMessage from "../contact-form/success-message/success-message";
+import ModalMessage from "../contact-form/disaplay-message/modal-message";
 
 const AppHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
-  const [showSuccessMsg, setShowSuccessMsg] = useState(false);
-
+  const [showModalMsg, setShowModalMsg] = useState(false);
+  const [msgModalData, setMsgModalData] = useState({
+    type: "",
+    title: "",
+    subTitle: "",
+  });
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -69,16 +73,25 @@ const AppHeader = () => {
           onClose={() => {
             setIsModalOpen(false);
           }}
-          onSuccess={() => {
+          onApiCall={(type: any, subTitle: any, title: any) => {
             setIsModalOpen(false);
-            setShowSuccessMsg(true);
+            setMsgModalData({
+              title: title,
+              type: type,
+              subTitle: subTitle,
+            });
+            setShowModalMsg(true);
+            // setShowSuccessMsg(true);
           }}
         />
       )}
-      {showSuccessMsg && (
-        <SuccessMessage
+      {showModalMsg && (
+        <ModalMessage
+          title={msgModalData.title}
+          type={msgModalData.type}
+          subTitle={msgModalData.subTitle}
           onClose={() => {
-            setShowSuccessMsg(false);
+            setShowModalMsg(false);
           }}
         />
       )}

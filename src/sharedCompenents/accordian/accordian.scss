@@ -1,0 +1,32 @@
+/* Styling for the Accordion */
+.accordion {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 10px;
+  }
+
+  .accordion-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+
+  .accordion-content {
+    padding: 10px 10px;
+    font-size: 16px;
+    // padding-bottom: 8px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .closed {
+    transform: rotate(180deg);
+    animation: 0.5 ease;
+  }
+}

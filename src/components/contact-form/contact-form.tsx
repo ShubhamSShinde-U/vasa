@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import Input from "../../sharedCompenents/input/input";
 import Modal from "../../sharedCompenents/modal/modal";
 import "./contact-form.scss";
-function ContactForm({ onClose, onSuccess }: any) {
+import { SendDemoRequest } from "./contact.service";
+import { SearchLoader } from "../../sharedCompenents/loader/loader";
+import { messageType } from "../../constant/helper";
+function ContactForm({ onClose, onApiCall }: any) {
   const [userData, setUserData] = useState({
     firstName: "",
     lastName: "",
@@ -17,6 +20,8 @@ function ContactForm({ onClose, onSuccess }: any) {
       return { ...prev, [name]: value };
     });
   };
+  const [isLoading, setIsLoading] = useState(false);
+  // const [showMsgModal, setShowMsgModal] = useState(false);
 
   const updateEmail = () => {
     if (
@@ -48,6 +53,35 @@ function ContactForm({ onClose, onSuccess }: any) {
   useEffect(() => {
     updateEmail();
   }, [userEmail.value]);
+
+  const addItem = () => {
+    // alert('3')
+    setIsLoading(true);
+    SendDemoRequest({
+      payload: {
+        firstName: userData.firstName,
+        lastName: userData.lastName,
+        orgName: userData.orgName,
+        userEmail: userEmail.value,
+      },
+      successCb: () => {
+        setIsLoading(false);
+        onApiCall(
+          messageType.success,
+          "Our Team will contact you soon",
+          "Thank You"
+        );
+      },
+      errorCb: () => {
+        onApiCall(
+          messageType.failed,
+          "Try with different email id",
+          "Something wrong !"
+        );
+        setIsLoading(false);
+      },
+    });
+  };
   return (
     <Modal onClose={onClose}>
       <div className="contact-form">
@@ -99,10 +133,11 @@ function ContactForm({ onClose, onSuccess }: any) {
         <button
           className={`primary-button ${!isFormValid() ? "disabled" : ""}`}
           onClick={() => {
-            isFormValid() && onSuccess();
+            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+            isFormValid() && addItem();
           }}
         >
-          Request
+          {isLoading ? <SearchLoader /> : "Request"}
         </button>
       </div>
     </Modal>

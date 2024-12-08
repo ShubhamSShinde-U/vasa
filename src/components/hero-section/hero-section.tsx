@@ -1,10 +1,15 @@
 import { useState } from "react";
 import "./hero-section.scss";
 import ContactForm from "../contact-form/contact-form";
-import SuccessMessage from "../contact-form/success-message/success-message";
+import ModalMessage from "../contact-form/disaplay-message/modal-message";
 function HeroSection() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const [showSuccessMsg, setShowSuccessMsg] = useState(false);
+  const [showModalMsg, setShowModalMsg] = useState(false);
+  const [msgModalData, setMsgModalData] = useState({
+    type: "",
+    title: "",
+    subTitle: "",
+  });
   return (
     <div className="hero-banner">
       <div className="hero-content">
@@ -29,19 +34,29 @@ function HeroSection() {
       </div>
       {isContactModalOpen && (
         <ContactForm
+          setMsgModalData={setMsgModalData}
           onClose={() => {
             setIsContactModalOpen(false);
           }}
-          onSuccess={() => {
-            setIsContactModalOpen(false)
-            setShowSuccessMsg(true)
+          onApiCall={(type:any, subTitle:any, title:any) => {
+            setIsContactModalOpen(false);
+            setMsgModalData({
+              title: title,
+              type: type,
+              subTitle: subTitle,
+            });
+            setShowModalMsg(true)
+            // setShowSuccessMsg(true);
           }}
         />
       )}
-      {showSuccessMsg && (
-        <SuccessMessage
+      {showModalMsg && (
+        <ModalMessage
+          title={msgModalData.title}
+          type={msgModalData.type}
+          subTitle={msgModalData.subTitle}
           onClose={() => {
-            setShowSuccessMsg(false);
+            setShowModalMsg(false);
           }}
         />
       )}

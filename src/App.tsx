@@ -4,6 +4,7 @@ import Layout from "./components/layout/layout";
 // import HomePage from "./components/home-page/home-page";
 import LandingPage from "./pages/landing-page";
 import About from "./pages/about/about";
+import DetailedService from "./pages/detailed-service/detailed-service";
 
 // Define your routes array
 const routes = [
@@ -16,7 +17,10 @@ const routes = [
         path: "about",
         element: <About />,
       },
-
+      {
+        path:'services/:id',
+        element:<DetailedService />
+      },
       {
         path: "*",
         element: <Navigate to={'home'}/>,

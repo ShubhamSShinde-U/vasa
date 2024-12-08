@@ -3,10 +3,15 @@ import Clients from "../../components/home-page/clients/clients";
 import WhyUs from "../../components/why-us/why-us";
 import "./about.scss";
 import ContactForm from "../../components/contact-form/contact-form";
-import SuccessMessage from "../../components/contact-form/success-message/success-message";
+import ModalMessage from "../../components/contact-form/disaplay-message/modal-message";
 function About() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [showSuccessMsg, setShowSuccessMsg] = useState(false);
+  const [msgModalData, setMsgModalData] = useState({
+    type: "",
+    title: "",
+    subTitle: "",
+  });
   return (
     <div className="about-wrapper">
       <div className="about-hero">
@@ -50,14 +55,23 @@ function About() {
           onClose={() => {
             setIsContactModalOpen(false);
           }}
-          onSuccess={() => {
+          onApiCall={(type: any, subTitle: any, title: any) => {
             setIsContactModalOpen(false);
+            setMsgModalData({
+              title: title,
+              type: type,
+              subTitle: subTitle,
+            });
+            // setShowModalMsg(true);
             setShowSuccessMsg(true);
           }}
         />
       )}
       {showSuccessMsg && (
-        <SuccessMessage
+        <ModalMessage
+          title={msgModalData.title}
+          type={msgModalData.type}
+          subTitle={msgModalData.subTitle}
           onClose={() => {
             setShowSuccessMsg(false);
           }}
