@@ -31,7 +31,9 @@ const AppHeader = () => {
     <header className="app-header">
       <div className="header-left">
         <div className="logo-container">
-          <span className="company-name">VASA</span>
+          <span className="company-name">
+            <img src="images/vasa-logo.png" alt="" width={140} height={60}/>
+          </span>
         </div>
 
         {/* Hamburger Button */}
