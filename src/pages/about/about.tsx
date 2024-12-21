@@ -37,7 +37,7 @@ function About() {
       </div>
       <div className="about-vision">
         <div className="vision-icon-text">
-          <img src="assets/vision.svg" width={90} alt="" />
+          {/* <img src="assets/vision.svg" width={90} alt="" /> */}
           <div className="primary-title">
             Our <span className="primary-span">Vision</span>
           </div>
