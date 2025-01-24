@@ -1,4 +1,4 @@
-import './clients.css'
+import './clients.scss'
 function Clients() {
   return (
     <div className='all-clients-wrapper'>

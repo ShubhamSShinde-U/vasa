@@ -1,0 +1,46 @@
+.card-advantage-wrapper {
+  width: 280px;
+  //   height: 300px;
+  min-height: 250px;
+  max-height: 300px;
+//   background-color: #80ce8f;
+  position: rejlative;
+  border-radius: 4px;
+  box-shadow: 0 20px 51.4px var(--box-shadow);
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  position: relative;
+  .circle {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    top: 15px;
+    left: 15px;
+    background-color: var(--primary-hover-100);
+  }
+  .cardAdvantageInfo {
+    margin: 32px;
+    padding: 20px 20px 16px;
+    border: 1px solid var(--primary-hover-100);
+    // width: 230px;
+    // height: 230px;
+    border-radius: 4px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+
+    .cardAdvantage-title {
+    //   padding: 32px 8px 8px 18px;
+      font-size: 18px;
+      font-weight: bold;
+      color: rgba(0, 0, 0, 0.75);
+    }
+    .cardAdvantage-subTitle {
+    //   padding: 0 8px 8px 18px;
+    color: rgba(0,0,0,0.65);
+    }
+  }
+}

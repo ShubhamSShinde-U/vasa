@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Services from "../all-services/services";
+import Services from "../all-services/allServices";
 import "./home-page.css"; // Create a CSS file for the styles
 import Contact from "../contact/contact";
 import Clients from "./clients/clients";
@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <div className="homepage">
       {/* Header Section */}
-      
+
       {/* clients  */}
       <Clients />
       {/* services  */}

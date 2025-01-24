@@ -16,8 +16,10 @@ function About() {
     <div className="about-wrapper">
       <div className="about-hero">
         <div className="about-hero-title ">
-          <div className="primary-title">What we do?</div>
-          <div className="secondary-title">
+          <div className="primary-title">
+            What we <span className="primary-span">do</span>?
+          </div>
+          <div className="secondary-sub-title">
             "We are helping businesses redefine scooter design by blending
             innovation with engineering excellence and creating custom
             two-wheeler solutions that inspire."

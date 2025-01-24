@@ -1,9 +1,11 @@
 .hero-banner {
   display: flex;
   justify-content: space-between;
-  padding: 50px;
+  padding: 50px 0;
   height: 100%;
+  max-width: 1164px;
   // align-items: center;
+  gap:32px;
 
   .hero-content {
     width: 60%;

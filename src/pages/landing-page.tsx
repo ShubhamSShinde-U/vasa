@@ -1,4 +1,4 @@
-import Services from "../components/all-services/services";
+import Services from "../components/all-services/allServices";
 import HeroSection from "../components/hero-section/hero-section";
 import Clients from "../components/home-page/clients/clients";
 import { accordianData } from "../constant/constant";
@@ -16,7 +16,12 @@ function LandingPage() {
         <div className="title secondary-title">Frequently Asked Questions</div>
         {accordianData.map((data, index) => {
           return (
-            <Accordion key={index} index={index} title={data.title} content={data.content} />
+            <Accordion
+              key={index}
+              index={index}
+              title={data.title}
+              content={data.content}
+            />
           );
         })}
       </div>

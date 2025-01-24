@@ -5,7 +5,7 @@ function Card({ cardData }: any) {
   return (
     <div className="card-wrapper">
       <div className="card-img">
-        <img src={cardData.icon} alt="" width={50}/>
+        {/* <img src={cardData.icon} alt="" width={50}/> */}
       </div>
       <div className="card-info">
         <div className="card-title">{cardData.title}</div>

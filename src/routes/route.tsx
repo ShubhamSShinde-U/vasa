@@ -3,6 +3,7 @@ import Layout from "../components/layout/layout";
 import { LazyAbout, LazyHome } from "./lazy-route";
 import { Suspense } from "react";
 import { Loader } from "../sharedCompenents/loader/loader";
+import Services from "../pages/service/services";
 
 const routes = [
   {
@@ -10,12 +11,16 @@ const routes = [
     element: <Layout />,
     children: [
       {
-        path: "home",
+        path: "",
         element: (
           <Suspense fallback={<Loader />}>
             <LazyHome />
           </Suspense>
         ),
+      },
+      {
+        path: "services",
+        element: <Services />,
       },
       {
         path: "about",
@@ -38,6 +43,10 @@ const routes = [
         element: <Navigate to={"/home"} />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <Navigate to={"home"} />,
   },
 ];
 

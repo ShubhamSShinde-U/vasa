@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { caeServices, services } from "../appConstant";
 import ServiceCard from "./service-card/service-card";
-import "./services.scss";
-function Services() {
+import "./allServices.scss";
+function AllServices() {
   return (
     <div className="services-wrapper">
       <div className="services-all-cards-wrapper">
@@ -22,4 +22,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default AllServices;

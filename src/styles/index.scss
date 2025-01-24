@@ -54,8 +54,16 @@
   cursor: pointer;
 }
 
-@mixin secondary-title{
+@mixin secondary-title {
   font-size: 1.75rem;
   font-weight: 500;
   line-height: 1.5;
 }
+
+@mixin secondary-sub-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+
