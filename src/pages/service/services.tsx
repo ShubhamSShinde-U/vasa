@@ -78,11 +78,10 @@ function Services() {
       <div className="advantages">
         <div className="header">Advantages of Choosing Us!</div>
         <div className="all-adv">
-          {advantages?.map((each:any) => {
-            return <CardAdvantage 
-              title={each.title}
-              info={each.info}
-            />;
+          {advantages?.map((each: any, index: number) => {
+            return (
+              <CardAdvantage key={index} title={each.title} info={each.info} />
+            );
           })}
         </div>
       </div>
