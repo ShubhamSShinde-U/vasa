@@ -3,7 +3,7 @@ import Layout from "../components/layout/layout";
 import { LazyAbout, LazyHome } from "./lazy-route";
 import { Suspense } from "react";
 import { Loader } from "../sharedCompenents/loader/loader";
-import Services from "../pages/service/services";
+import Services from "../pages/service/services-page";
 
 const routes = [
   {

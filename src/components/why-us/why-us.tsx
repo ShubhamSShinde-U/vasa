@@ -1,4 +1,4 @@
-import Card from "./card/card";
+import CardAdvantage from "../../pages/service/card-advantage/card-advantage";
 import "./why-us.scss";
 
 function WhyUs() {
@@ -37,10 +37,10 @@ function WhyUs() {
   ];
   return (
     <div className="why-us-wrapper">
-        <div className="why-choose-us-title">WHY CHOOSE US?</div>
+      <div className="why-choose-us-title">WHY CHOOSE US?</div>
       <div className="all-card-container">
         {cardData.map((card: any) => {
-          return <Card cardData={card} />;
+          return <CardAdvantage title={card.title} info={card.desc} />;
         })}
       </div>
     </div>

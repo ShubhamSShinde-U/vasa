@@ -1,0 +1,137 @@
+.services-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .benifits {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(136, 251, 136);
+    padding: 30px 0;
+    // margin-top: 60px;
+    width: 1164px;
+
+    .each-benifit {
+      font-weight: 700;
+      opacity: 0.65;
+    }
+  }
+
+  .all-features {
+    display: flex;
+    flex-direction: column;
+    // gap: 72px;
+    // padding: 120px 0;
+    
+    width: 1164px;
+
+    .title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .sub-title {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 72px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.75);
+    }
+    .feature-wrapper {
+      display: flex;
+      justify-content: space-evenly;
+      //
+      .feature {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        text-align: center;
+        font-weight: 600;
+
+        .featuretitle {
+          width: 70%;
+          opacity: 0.75;
+          letter-spacing: 0px;
+        }
+      }
+    }
+  }
+
+  .advantages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 64px;
+    // padding-bottom: 72px;
+    .header {
+      font-size: 28px;
+      font-weight: 600;
+    }
+    .all-adv {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 64px;
+    }
+  }
+  .service-hero-container {
+    margin: 40px 0 50px;
+  }
+  .service-all-features-container {
+    margin:40px 0 50px;
+  }
+  .service-advantages-container {
+    margin: 80px 0 50px;
+  }
+  .service-accordian-representation-container {
+    margin: 40px 0 50px;
+  }
+  .service-benifits-container{
+    width: 100%;
+    margin: 40px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-page-wrapper {
+    .hero-section {
+      flex-direction: column;
+    }
+    .benifits {
+      width: 100%;
+      gap: 12px;
+      .each-benifit {
+        font-size: 12px;
+      }
+    }
+    .all-features {
+      width: 100%;
+    }
+    .advantages {
+      width: 100%;
+      .header {
+        width: 80%;
+        text-align: center;
+      }
+      .all-adv {
+        flex-wrap: wrap;
+      }
+    }
+    .accordian-data {
+      padding: 0 12px;
+    }
+    .feature-wrapper {
+      scale: 0.75;
+    }
+    .all-accordian-wrapper {
+      padding: 0 24px;
+    }
+  }
+}
