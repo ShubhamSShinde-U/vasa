@@ -5,10 +5,11 @@ import CardAdvantage from "./card-advantage/card-advantage";
 import "./services-page.scss";
 import { useEffect, useState } from "react";
 import { Loader } from "../../sharedCompenents/loader/loader";
+import NoData from "../../sharedCompenents/no-data/no-data";
 function Services() {
   //Access the ID from the query parametersj
   const [searchParams] = useSearchParams();
-  const [data, setData] = useState<any>({});
+  const [data, setData] = useState<any>(null);
 
   const name = searchParams.get("name");
 
@@ -71,7 +72,7 @@ function Services() {
     setIsLoading(true);
 
     if (name) {
-      setData(dataToDisplay[name]);
+      setData(dataToDisplay[name] || null);
     } else {
       setData(dataToDisplay["end-to-end-engineering"]);
     }
@@ -116,6 +117,10 @@ function Services() {
         <Loader />
       </div>
     );
+  }
+
+  if(!isLoading && !data){
+    return <NoData title={"Something went Wrong"}/>
   }
   return (
     <div className="services-page-wrapper">
