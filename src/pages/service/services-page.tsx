@@ -6,6 +6,7 @@ import "./services-page.scss";
 import { useEffect, useState } from "react";
 import { Loader } from "../../sharedCompenents/loader/loader";
 import NoData from "../../sharedCompenents/no-data/no-data";
+import AllServicesRedirect from "./all-services-redirect/all-services-redirect";
 function Services() {
   //Access the ID from the query parametersj
   const [searchParams] = useSearchParams();
@@ -119,11 +120,12 @@ function Services() {
     );
   }
 
-  if(!isLoading && !data){
-    return <NoData title={"Something went Wrong"}/>
+  if (!isLoading && !data) {
+    return <NoData title={"Something went Wrong"} />;
   }
   return (
     <div className="services-page-wrapper">
+      {!name && <AllServicesRedirect />}
       <div className="service-hero-container">
         <HeroSection
           title={data.titlle}

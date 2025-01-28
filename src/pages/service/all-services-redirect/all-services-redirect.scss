@@ -1,0 +1,18 @@
+.all-services-redirect-wrapper{
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap:8px;
+    background-color: lightgreen;
+    padding: 8px 10px;
+    text-align: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    color: #393939;
+    overflow: hidden;
+    img{
+        transform: rotate(90deg);
+    }
+}
