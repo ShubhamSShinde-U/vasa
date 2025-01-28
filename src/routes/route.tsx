@@ -20,7 +20,11 @@ const routes = [
       },
       {
         path: "services",
-        element: <Services />,
+        element: (
+          <Suspense fallback={<Loader/>}>
+            <Services />
+          </Suspense>
+        ),
       },
       {
         path: "about",
@@ -30,23 +34,23 @@ const routes = [
           </Suspense>
         ),
       },
-      {
-        path: "services/:id",
-        element: (
-          <Suspense fallback={<Loader />}>
-            <LazyHome />
-          </Suspense>
-        ),
-      },
+      // {
+      //   path: "services",
+      //   element: (
+      //     <Suspense fallback={<Loader />}>
+      //       <LazyHome />
+      //     </Suspense>
+      //   ),
+      // },
       {
         path: "*",
-        element: <Navigate to={"/home"} />,
+        element: <Navigate to={"/"} />,
       },
     ],
   },
   {
     path: "*",
-    element: <Navigate to={"home"} />,
+    element: <Navigate to={""} />,
   },
 ];
 

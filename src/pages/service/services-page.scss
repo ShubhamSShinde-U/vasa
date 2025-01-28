@@ -22,7 +22,7 @@
     flex-direction: column;
     // gap: 72px;
     // padding: 120px 0;
-    
+
     width: 1164px;
 
     .title {
@@ -82,7 +82,7 @@
     margin: 40px 0 50px;
   }
   .service-all-features-container {
-    margin:40px 0 50px;
+    margin: 40px 0 50px;
   }
   .service-advantages-container {
     margin: 80px 0 50px;
@@ -90,7 +90,7 @@
   .service-accordian-representation-container {
     margin: 40px 0 50px;
   }
-  .service-benifits-container{
+  .service-benifits-container {
     width: 100%;
     margin: 40px 0 50px;
     display: flex;
@@ -98,7 +98,13 @@
     justify-content: center;
   }
 }
-
+.page-loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media (max-width: 480px) {
   .services-page-wrapper {
     .hero-section {

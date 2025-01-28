@@ -5,6 +5,7 @@ import AccordianRepresentation from "./accordian-representation/accordian-repres
 import "./landing-page.scss";
 
 function LandingPage() {
+  
   return (
     <div className="landing-page-wrapper">
       <div className="landing-hero-container">
@@ -29,10 +30,6 @@ function LandingPage() {
         {" "}
         <AccordianRepresentation />
       </div>
-      {/* <div className="landing-services-container">
-        {" "}
-        <WhyUs />
-      </div> */}
     </div>
   );
 }

@@ -18,3 +18,20 @@
     margin: 40px 0 50px;
   }
 }
+
+@media (max-width: 480px) {
+  .all-accordian-wrapper {
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+  .landing-page-wrapper {
+    .landing-hero-container {
+      margin: 40px 36px 50px;
+    }
+    .landing-accordian-representation-container {
+      margin: 40px 36px 50px;
+    }
+  }
+}

@@ -5,7 +5,7 @@
   height: 100%;
   max-width: 1164px;
   align-items: center;
-  gap:72px;
+  gap: 72px;
 
   .hero-content {
     width: 60%;
@@ -37,9 +37,9 @@
     .hero-content {
       width: 100%;
       margin: 50px 0 0px 0;
-      gap:22px;
+      gap: 22px;
       // text-align: center;
-      // max-width: 100%;
+      max-width: 100%;
       .primary-title {
         font-size: 2rem;
         margin-bottom: 20px;
@@ -48,7 +48,7 @@
         font-size: 2rem;
       }
       .primary-sub-title {
-        width: 100%;
+        max-width: 100%;
         margin-bottom: 30px;
       }
     }
@@ -60,4 +60,31 @@
       }
     }
   }
+}
+
+@media (max-width: 768px) and (min-width:481px) {
+  .hero-banner {
+    gap: 36px;
+    .hero-content {
+      width: 50%;
+      .primary-title {
+        font-size: 40px;
+      }
+      .primary-span {
+        font-size: 40px;
+      }
+    }
+    .hero-imgage {
+      width: 50%;
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .services-all-cards-wrapper{
+    .services-card{
+      width: 100%;
+    }
+  }
+ 
 }

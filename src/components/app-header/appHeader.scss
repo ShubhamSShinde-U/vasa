@@ -103,7 +103,7 @@
 
   .nav-menu {
     position: absolute;
-    top: 55px;
+    top: 85px;
     right: 0;
     flex-direction: column;
     background-color: white;
@@ -122,10 +122,10 @@
 
   .menu-item {
     font-size: 14px;
-    padding: 10px 0;
-    width: 100%;
-    text-align: left;
-    margin-left: 32px;
+    padding: 5px 0;
+    // width: 100%;
+    text-align: center;
+    // margin-left: 32px;
   }
 
   .app-header-btn {
@@ -148,16 +148,14 @@
 }
 
 @media (max-width: 480px) {
-  .nav-menu {
-    // padding: 0px;
-  }
+ 
   .company-name {
     font-size: 18px;
   }
 
   .menu-item {
     font-size: 14px;
-    margin-left: 32px;
+    // margin-left: 32px;
   }
 
   .app-header-btn {
