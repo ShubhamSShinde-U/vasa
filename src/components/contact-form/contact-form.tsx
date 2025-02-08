@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import Input from "../../sharedCompenents/input/input";
 import Modal from "../../sharedCompenents/modal/modal";
 import "./contact-form.scss";
-import { SendDemoRequest } from "./contact.service";
 import { SearchLoader } from "../../sharedCompenents/loader/loader";
+import { Databases, ID } from "appwrite";
+import { client } from "../../app-write/appWrite";
 import { messageType } from "../../constant/helper";
 function ContactForm({ onClose, onApiCall }: any) {
   const [userData, setUserData] = useState({
@@ -15,12 +16,19 @@ function ContactForm({ onClose, onApiCall }: any) {
     value: "",
     isValid: false,
   });
+  const [userNumber, setUserNumber] = useState({
+    value: "",
+    error: "",
+    isValid: false,
+  });
   const updateUserData = (name: string, value: string) => {
     setUserData((prev: any) => {
       return { ...prev, [name]: value };
     });
   };
   const [isLoading, setIsLoading] = useState(false);
+  const databases = new Databases(client);
+
   // const [showMsgModal, setShowMsgModal] = useState(false);
 
   const updateEmail = () => {
@@ -47,41 +55,106 @@ function ContactForm({ onClose, onApiCall }: any) {
       userData.firstName.length &&
       userData.lastName.length &&
       userData.orgName.length &&
-      userEmail.isValid
+      userEmail.isValid &&
+      userNumber.isValid
     );
+  };
+  const validateNumber = () => {
+    if (
+      /^[+]?[0-9]{1,4}?[-\s.]?(\(?\d{3}\)?[-\s.]?)?\d{3}[-\s.]?\d{4}$/.test(
+        userNumber.value
+      )
+    ) {
+      setUserNumber((prev: any) => {
+        return {
+          ...prev,
+          isValid: true,
+        };
+      });
+    } else {
+      setUserNumber((prev: any) => {
+        return {
+          ...prev,
+          isValid: false,
+          error: "Enter Valid Number",
+        };
+      });
+    }
   };
   useEffect(() => {
     updateEmail();
   }, [userEmail.value]);
 
+  useEffect(() => {
+    validateNumber();
+  }, [userNumber.value]);
+
   const addItem = () => {
-    // alert('3')
     setIsLoading(true);
-    SendDemoRequest({
-      payload: {
+
+    console.log(import.meta?.env);
+
+    const promise = databases.createDocument(
+      import.meta.env.VITE_APP_WRITE_DB_ID,
+      import.meta.env.VITE_APP_WRITE_COLLECTION_ID,
+      ID.unique(),
+      {
         firstName: userData.firstName,
         lastName: userData.lastName,
         orgName: userData.orgName,
-        userEmail: userEmail.value,
-      },
-      successCb: () => {
-        setIsLoading(false);
+        emailId: userEmail.value,
+        status: "New",
+        contactNumber: userNumber.value.toString(),
+      }
+    );
+
+    promise.then(
+      function (response) {
+        console.log(response);
         onApiCall(
           messageType.success,
           "Our Team will contact you soon",
           "Thank You"
         );
+        setIsLoading(false);
       },
-      errorCb: () => {
+      function () {
         onApiCall(
           messageType.failed,
           "Try with different email id",
           "Something wrong !"
         );
         setIsLoading(false);
-      },
-    });
+      }
+    );
+    // SendDemoRequest({
+    //   payload: {
+    //     firstName: userData.firstName,
+    //     lastName: userData.lastName,
+    //     orgName: userData.orgName,
+    //     emailId: userEmail.value,
+    //     status: "New",
+    //     contactNumber: userNumber,
+    //   },
+    //   successCb: () => {
+    //     setIsLoading(false);
+    //     onApiCall(
+    //       messageType.success,
+    //       "Our Team will contact you soon",
+    //       "Thank You"
+    //     );
+    //   },
+    //   errorCb: () => {
+    //     onApiCall(
+    //       messageType.failed,
+    //       "Try with different email id",
+    //       "Something wrong !"
+    //     );
+    //     setIsLoading(false);
+    //   },
+    // });
   };
+
   return (
     <Modal onClose={onClose}>
       <div className="contact-form">
@@ -129,7 +202,21 @@ function ContactForm({ onClose, onApiCall }: any) {
             });
           }}
         ></Input>
-
+        <Input
+          label={"Contact Number"}
+          maxx={10}
+          placeholder={"Enter Your Contact Number"}
+          value={userNumber.value}
+          onChange={(e: any) => {
+            setUserNumber((prev: any) => {
+              return {
+                ...prev,
+                value: e.target.value,
+              };
+            });
+          }}
+          error={userNumber.error}
+        ></Input>
         <button
           className={`primary-button ${!isFormValid() ? "disabled" : ""}`}
           onClick={() => {
